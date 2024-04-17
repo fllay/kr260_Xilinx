@@ -99,7 +99,233 @@ Summary: There were 8 WARNING messages.
 [INFO] Copying SDK Installer...
 [INFO] Successfully built project
 
+```
+Craete SD-Card image
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$ petalinux-package --boot --u-boot --force
+[INFO] Sourcing buildtools
+INFO: File in BOOT BIN: "/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux/zynqmp_fsbl.elf"
+INFO: File in BOOT BIN: "/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux/pmufw.elf"
+INFO: File in BOOT BIN: "/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux/bl31.elf"
+INFO: File in BOOT BIN: "/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux/system-zynqmp-sck-kr-g-revB.dtb"
+INFO: File in BOOT BIN: "/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux/u-boot.elf"
+INFO: Generating zynqmp binary package BOOT.BIN...
+
+
+****** Bootgen v2023.1
+  **** Build date : Apr  7 2023-10:18:04
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+[INFO]   : Bootimage generated successfully
+
+INFO: Binary is ready.
+```
+
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$ petalinux-package --wic --images-dir images/linux/ --bootfiles "ramdisk.cpio.gz.u-boot,boot.scr,Image,system.dtb,system-zynqmp-sck-kr-g-revB.dtb" --disk-name "sda"
+INFO: Sourcing build environment
+INFO: bitbake wic-tools
+NOTE: Started PRServer with DBfile: /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/build/cache/prserv.sqlite3, Address: 127.0.0.1:36763, PID: 1870321
+Loading cache: 100% |####################################################################################################################################################| Time: 0:00:01
+Loaded 6268 entries from dependency cache.
+Parsing recipes: 100% |##################################################################################################################################################| Time: 0:00:01
+Parsing of 4344 .bb files complete (4337 cached, 7 parsed). 6275 targets, 292 skipped, 1 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+Initialising tasks: 100% |###############################################################################################################################################| Time: 0:00:11
+Checking sstate mirror object availability: 100% |#######################################################################################################################| Time: 0:00:10
+Sstate summary: Wanted 429 Local 11 Mirrors 404 Missed 14 Current 856 (96% match, 98% complete)
+NOTE: Executing Tasks
+NOTE: Tasks Summary: Attempted 3490 tasks of which 3439 didn't need to be rerun and all succeeded.
+INFO: Extracting rootfs, This may take time!
+INFO: Creating wic image...
+INFO: wic create /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/build/rootfs.wks --rootfs-dir /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/build/wic/rootfs --bootimg-dir /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux --kernel-dir /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux --outdir /tmp/tmp.rOoNpmnIY9 -n /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/build/tmp/work/cortexa72-cortexa53-xilinx-linux/wic-tools/1.0-r0/recipe-sysroot-native 
+INFO: Creating image(s)...
+
+WARNING: bootloader config not specified, using defaults
+
+INFO: The new image(s) can be found here:
+  /tmp/tmp.rOoNpmnIY9/rootfs-202404171458-sda.direct
+
+The following build artifacts were used to create the image(s):
+  ROOTFS_DIR:                   /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/build/wic/rootfs
+  BOOTIMG_DIR:                  /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux
+  KERNEL_DIR:                   /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux
+  NATIVE_SYSROOT:               /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/build/tmp/work/cortexa72-cortexa53-xilinx-linux/wic-tools/1.0-r0/recipe-sysroot-native
+
+INFO: The image(s) were created using OE kickstart file:
+  /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/build/rootfs.wks
+
+```
+
+wic file is here
+
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ ls -l
+total 6961836
+-rw-r--r-- 1 pi pi      49298 Apr 17 21:06 bl31.bin
+-rw-r--r-- 1 pi pi     148104 Apr 17 21:06 bl31.elf
+-rw-rw-r-- 1 pi pi    1766536 Apr 17 21:54 BOOT.BIN
+-rw-rw-r-- 1 pi pi        786 Apr 17 21:54 bootgen.bif
+-rw-r--r-- 1 pi pi       3017 Apr 17 21:06 boot.scr
+-rw-r--r-- 1 pi pi       8549 Apr 17 20:58 config
+drwxr-xr-x 2 pi pi       4096 Apr 17 21:07 dtbos
+-rw-r--r-- 1 pi pi     939304 Apr 17 21:08 fit-dtb.blob
+-rw-r--r-- 1 pi pi   22606336 Apr 17 21:12 Image
+-rw-r--r-- 1 pi pi    9772973 Apr 17 21:12 Image.gz
+-rw-r--r-- 1 pi pi   34747124 Apr 17 21:12 image.ub
+-rw-r--r-- 1 pi pi       8192 Apr 17 21:05 kr-eeprom.bin
+-rw-r--r-- 1 pi pi       8192 Apr 17 21:05 kv-eeprom.bin
+-rw-r--r-- 1 pi pi 6442455040 Apr 17 21:58 petalinux-sdimage.wic
+-rw-r--r-- 1 pi pi       3141 Apr 17 21:07 pl.dtbo
+-rw-r--r-- 1 pi pi       1832 Apr 17 21:08 pmu-conf.bin
+-rw-r--r-- 1 pi pi     509208 Apr 17 21:07 pmufw.elf
+-rwxr-xr-x 1 pi pi      37327 Oct 13  2023 pmu_rom_qemu_sha3.elf
+drwxr-xr-x 2 pi pi       4096 Apr 17 21:06 pxelinux.cfg
+-rw-r--r-- 1 pi pi   24875918 Apr 17 21:12 ramdisk.cpio.gz
+-rw-r--r-- 1 pi pi   24875982 Apr 17 21:12 ramdisk.cpio.gz.u-boot
+-rw-r--r-- 1 pi pi       5354 Apr 17 21:12 ramdisk.manifest
+-rw-r--r-- 1 pi pi   25059361 Apr 17 21:12 ramdisk.tar.gz
+-rw-r--r-- 1 pi pi 1186200064 Apr 17 21:13 rootfs.cpio
+-rw-r--r-- 1 pi pi  318030970 Apr 17 21:14 rootfs.cpio.gz
+-rw-r--r-- 1 pi pi  318031034 Apr 17 21:14 rootfs.cpio.gz.u-boot
+-rw-r--r-- 1 pi pi 1850742784 Apr 17 21:13 rootfs.ext4
+-rw-r--r-- 1 pi pi  456916992 Apr 17 21:14 rootfs.jffs2
+-rw-r--r-- 1 pi pi      47753 Apr 17 21:13 rootfs.manifest
+-rw-r--r-- 1 pi pi  321867301 Apr 17 21:13 rootfs.tar.gz
+-rwxr-xr-x 1 pi pi 1062531819 Apr 17 21:53 sdk.sh
+-rw-r--r-- 1 pi pi       8192 Apr 17 21:05 som-eeprom.bin
+-rw-r--r-- 1 pi pi    7797811 Apr 17 20:56 system.bit
+lrwxrwxrwx 1 pi pi         31 Apr 17 21:07 system.dtb -> system-zynqmp-sck-kr-g-revB.dtb
+-rw-r--r-- 1 pi pi      44861 Apr 17 21:07 system-zynqmp-sck-kr-g-revB.dtb
+-rwxr-xr-x 1 pi pi    1331672 Apr 17 21:08 u-boot.bin
+-rw-r--r-- 1 pi pi    1374530 Apr 17 21:08 u-boot-dtb.bin
+-rw-r--r-- 1 pi pi    1440648 Apr 17 21:08 u-boot-dtb.elf
+-rwxr-xr-x 1 pi pi   10066952 Apr 17 21:08 u-boot.elf
+-rw-r--r-- 1 pi pi   28355768 Apr 17 21:12 vmlinux
+-rw-r--r-- 1 pi pi     374224 Apr 17 21:08 zynqmp_fsbl.elf
+-rw-r--r-- 1 pi pi      76068 Apr 17 21:05 zynqmp-qemu-arm.dtb
+-rw-r--r-- 1 pi pi      86516 Apr 17 21:05 zynqmp-qemu-multiarch-arm.dtb
+-rw-r--r-- 1 pi pi      13283 Apr 17 21:05 zynqmp-qemu-multiarch-pmu.dtb
+```
+
+Create a sysroot
+
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$ cd images/linux/
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ ls -l ../../../
+total 1980812
+drwxr-xr-x 5 pi pi       4096 Apr 17 20:23 linux_files
+drwxr-xr-x 9 pi pi       4096 Apr 17 21:15 xilinx-kr260-starterkit-2023.1
+-rw-rw-r-- 1 pi pi 2028335657 Apr 16 18:55 xilinx-kr260-starterkit-v2023.1-05080224.bsp
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ ./sdk.sh -d ../../../linux_files/
+PetaLinux SDK installer version 2023.1
+======================================
+You are about to install the SDK to "/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files". Proceed [Y/n]? 
+Extracting SDK............................................................................................................................................................................................................................................................done
+Setting it up...done
+Your environment is misconfigured, you probably need to 'unset LD_LIBRARY_PATH'
+but please check why this was set in the first place and that it's safe to unset.
+The SDK will not operate correctly in most cases when LD_LIBRARY_PATH is set.
+For more references see:
+  http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html#AEN80
+  http://xahlee.info/UnixResource_dir/_/ldpath.html
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/post-relocate-setup.sh: Failed to source /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/environment-setup-cortexa72-cortexa53-xilinx-linux with status 1
+SDK has been successfully set up and is ready to be used.
+Each time you wish to use the SDK in a new shell session, you need to source the environment setup script e.g.
+ $ . /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/environment-setup-cortexa72-cortexa53-xilinx-linux
+
+```
+
+copy some files to `boot`
+
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ cp zynqmp_fsbl.elf pmufw.elf u-boot.elf system.dtb ../../../linux_files/boot/
+```
+
+copy `rootfs.ext4`
+
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ cp rootfs.ext4 ../../../linux_files/image/
+
+```
+
+copy `boot.scr, Imaage system.dtb` to  `../../../linux_files/sd_dir`
+
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ cp rootfs.ext4 ../../../linux_files/image/
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ cp Image ../../../linux_files/image/
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ cp boot.scr system.dtb ../../../linux_files/sd_dir/
+```
+
+
+Create device tree overlay
 
 
 ```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/linux_files$ xsct
+rlwrap: warning: your $TERM is 'xterm-256color' but rlwrap couldn't find it in the terminfo database. Expect some problems.
+                                                                                                                                                                                        
+****** Software Commandline Tool (XSCT) v2023.1.0
+  **** SW Build 0 on 2023-05-03-16:48:11
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+xsct% createdts -hw ../../                                                                                                                                                              
+application/ hardware/    platform/    software/    
+xsct% createdts -hw ../../hardware/kr260_platform_20231/kria_bd_wrapper.xsa -zocl -platform-name kria_kr260 -git-branch xlnx_rel_v2023.1 -overlay -compile -out ./dtg_output
+INFO: Downloading DTG repo from https://github.com/Xilinx/device-tree-xlnx.git to /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/dtg_output                          
+Cloning into 'device-tree-xlnx'...
+remote: Enumerating objects: 14828, done.
+remote: Counting objects: 100% (6196/6196), done.
+remote: Compressing objects: 100% (1492/1492), done.
+remote: Total 14828 (delta 3933), reused 6051 (delta 3830), pack-reused 8632
+Receiving objects: 100% (14828/14828), 2.94 MiB | 6.28 MiB/s, done.
+Resolving deltas: 100% (8270/8270), done.
+INFO: [Hsi 55-2053] elapsed time for repository (/home/pi/tools/Xilinx/Vitis/2023.1/data/embeddedsw) loading 0 seconds                                                                  
+INFO: Creating platform kria_kr260 at ./dtg_output                                                                                                                                      
+Opening the hardware design, this may take few seconds.
+INFO: Populating the default qemu data for the domain "device_tree_domain" from the install location /home/pi/tools/Xilinx/Vitis/2023.1/data/emulation/platforms/zynqmp/sw/a53_standalone/qemu/
+WARNING: no s_axi_aclk for clockwizard IP block: " clk_wiz_0"                                                                                                                           
+
+WARNING: Clock pin "s_axi_aclk" of IP block "axi_intc_0" is not connected to any of the pl_clk"
+
+zocl:false                                                                                                                                                                              
+ext_platform:
+WARNING: label 'usb0' found in existing tree                                                                                                                                            
+WARNING: label 'usb1' found in existing tree
+INFO: Generating device tree                                                                                                                                                            
+WARNING: no s_axi_aclk for clockwizard IP block: " clk_wiz_0"                                                                                                                           
+
+WARNING: Clock pin "s_axi_aclk" of IP block "axi_intc_0" is not connected to any of the pl_clk"                                                                                         
+
+zocl:true                                                                                                                                                                               
+ext_platform:
+intr_ctrl_len:1
+WARNING: label 'usb0' found in existing tree                                                                                                                                            
+WARNING: label 'usb1' found in existing tree
+Building the BSP Library for domain  - device_tree_domain on processor psu_cortexa53_0                                                                                                  
+make: Nothing to be done for 'all'.
+
+zynqmp.dtsi:439.38-449.5: Warning (interrupt_provider): /axi/interrupt-controller@f9010000: Missing #address-cells in interrupt provider
+  also defined at pcw.dtsi:11.6-14.3
+zynqmp.dtsi:649.23-660.5: Warning (interrupt_provider): /axi/gpio@ff0a0000: Missing #address-cells in interrupt provider
+  also defined at zynqmp-clk-ccf.dtsi:200.7-202.3
+  also defined at pcw.dtsi:88.7-93.3
+INFO: Device tree generation successful
+xsct% exit                                                          
+```
+
+Generate device tree overlay
+
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/linux_files$ dtc -@ -O dtb -o ./dtg_output/dtg_output/kria_kr260/psu_cortexa53_0/device_tree_domain/bsp/pl.dtbo ./dtg_output/dtg_output/kria_kr260/psu_cortexa53_0/device_tree_domain/bsp/pl.dtsi 
+./dtg_output/dtg_output/kria_kr260/psu_cortexa53_0/device_tree_domain/bsp/pl.dtsi:39.44-51.4: Warning (interrupt_provider): /fragment@1/__overlay__/interrupt-controller@80000000: Missing #address-cells in interrupt provider
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/linux_files$ ls -l ./dtg_output/dtg_output/kria_kr260/psu_cortexa53_0/device_tree_domain/bsp/pl.dtbo
+-rw-rw-r-- 1 pi pi 3181 Apr 17 22:25 ./dtg_output/dtg_output/kria_kr260/psu_cortexa53_0/device_tree_domain/bsp/pl.dtbo
+
+```
+
 
