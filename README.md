@@ -329,3 +329,23 @@ pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/linux_files$ ls -l ./d
 ```
 
 
+
+Follow step to create Vitis Platform and Applicaiton. When application is finished building process, follow the steps to prepare files to transfer to sd-card
+
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ mkdir -p vec_add_transfer
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ cd vec_add_transfer/
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/vec_add_transfer$ 
+cp ../software/linux_files/dtg_output/dtg_output/kria_kr260/psu_cortexa53_0/device_tree_domain/bsp/pl.dtbo .
+cp ../application/vec_add_system_hw_link/Hardware/binary_container_1.xclbin .
+cp ../application/vec_add/Hardware/vec_add .
+```
+
+Then create a file `shell.json` using `pico shell.json` with the following data
+```
+{
+  "shell_type" : "XRT_FLAT",
+  "num_slots": "1"
+}
+```
+
