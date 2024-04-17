@@ -68,6 +68,36 @@ INFO: copy to TFTP-boot directory is not enabled !!
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$
 ```
 ```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$ petalinux-build --sdk
+[INFO] Sourcing buildtools
+[INFO] Building project
+[INFO] Silentconfig project
+[INFO] Silentconfig rootfs
+[INFO] Generating workspace directory
+INFO: bitbake petalinux-image-minimal -c do_populate_sdk
+NOTE: Started PRServer with DBfile: /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/build/cache/prserv.sqlite3, Address: 127.0.0.1:35773, PID: 770500
+Loading cache: 100% |####################################################################################################################################################| Time: 0:00:01
+Loaded 6268 entries from dependency cache.
+Parsing recipes: 100% |##################################################################################################################################################| Time: 0:00:01
+Parsing of 4344 .bb files complete (4337 cached, 7 parsed). 6275 targets, 292 skipped, 1 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+WARNING: preferred version 2023.1 of xmutil not available (for item xmutil)
+WARNING: versions of xmutil available: 1.1
+WARNING: preferred version 2023.1 of xmutil not available (for item xmutil-dev)
+WARNING: versions of xmutil available: 1.1
+WARNING: preferred version 2023.1 of kria-pwrctl not available (for item kria-pwrctl)
+WARNING: versions of kria-pwrctl available: 1.1
+WARNING: preferred version 2023.1 of kria-pwrctl not available (for item kria-pwrctl-dev)
+WARNING: versions of kria-pwrctl available: 1.1
+Initialising tasks: 100% |###############################################################################################################################################| Time: 0:00:12
+Checking sstate mirror object availability: 100% |#######################################################################################################################| Time: 0:00:45
+Sstate summary: Wanted 1678 Local 62 Mirrors 1127 Missed 489 Current 1304 (70% match, 83% complete)
+NOTE: Executing Tasks
+NOTE: Tasks Summary: Attempted 8812 tasks of which 7608 didn't need to be rerun and all succeeded.
+
+Summary: There were 8 WARNING messages.
+[INFO] Copying SDK Installer...
+[INFO] Successfully built project
 
 
 
