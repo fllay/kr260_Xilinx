@@ -44,11 +44,68 @@ Device tree overlay to use in the accelerared application
 https://www.hackster.io/whitney-knitter/getting-started-with-the-kria-kr260-in-petalinux-2022-1-daec16
 
 ```
-petalinux-create --type project -s xilinx-kr260-starterkit-v2023.1-05080224.bsp --name linux_os
-cd linux_os/
+petalinux-create --type project -s xilinx-kv260-starterkit-v2022.1-05140151.bsp
+cd xilinx-kv260-starterkit-2022.1/
 petalinux-config --get-hw-description ../../hardware/kr260_platform_20231
 petalinux-config -c rootfs
 ```
+
+
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/project-spec/configs/rootfs_config - Configuration
+ ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ┌────────────────────────────────────────────────────────────────── Configuration ───────────────────────────────────────────────────────────────────┐
+  │  Arrow keys navigate the menu.  <Enter> selects submenus ---> (or empty submenus ----).  Highlighted letters are hotkeys.  Pressing <Y> includes,  │  
+  │  <N> excludes, <M> modularizes features.  Press <Esc><Esc> to exit, <?> for Help, </> for Search.  Legend: [*] built-in  [ ] excluded  <M> module  │  
+  │  < > module capable                                                                                                                                │  
+  │                                                                                                                                                    │  
+  │ ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ │  
+  │ │                                         Filesystem Packages   --->                                                                             │ │  
+  │ │                                         Petalinux Package Groups  --->                                                                         │ │  
+  │ │                                         Image Features  --->                                                                                   │ │  
+  │ │                                         user packages   --->                                                                                   │ │  
+  │ │                                         PetaLinux RootFS Settings  --->                                                                        │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ │                                                                                                                                                │ │  
+  │ └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │  
+  ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤  
+  │                                              <Select>    < Exit >    < Help >    < Save >    < Load >                                              │  
+  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘  
+    
+
+
+
+```
+Filesystem Packages --> console --> utils --> git --> [*] git
+Filesystem Packages --> base --> dnf --> [*] dnf
+Filesystem Packages --> x11 --> base --> libdrm --> [*] libdrm
+Filesystem Packages --> x11 --> base --> libdrm --> [*] libdrm-tests
+Filesystem Packages --> x11 --> base --> libdrm --> [*] libdrm-kms
+Filesystem Packages --> libs --> xrt --> [*] xrt
+Filesystem Packages --> libs --> xrt --> [*] xrt-dev
+Filesystem Packages --> libs --> zocl --> [*] zocl 
+Filesystem Packages --> libs --> opencl-headers --> [*] opencl-headers 
+Filesystem Packages --> libs --> opencl-clhpp --> [*] opencl-clhpp-dev
+Petaliunx Package Groups --> packagegroup-petalinux --> [*] packagegroup-petalinux
+Petaliunx Package Groups --> packagegroup-petalinux-gstreamer --> [*] packagegroup-petalinux-gstreamer
+Petaliunx Package Groups --> packagegroup-petalinux-opencv --> [*] packagegroup-petalinux-gstreamer
+Petaliunx Package Groups --> packagegroup-petalinux-v4lutils --> [*] packagegroup-petalinux-gstreamer
+Petaliunx Package Groups --> packagegroup-petalinux-x11 --> [*] packagegroup-petalinux-gstreamer
+```
+
 ```
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$ petalinux-build -x mrproper
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$ petalinux-build 
