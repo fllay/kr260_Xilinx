@@ -340,27 +340,28 @@ pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ cd new_applications/
 Then open Vitis
 
 ![Alt Text](images/v1713418441.png)
+![Alt Text](images/v1713418469.png)
+![Alt Text](images/v1713418599.png)
+![Alt Text](images/v1713419594.png)
+![Alt Text](images/v1713419622.png)
+![Alt Text](images/v1713419666.png)
+![Alt Text](images/v1713419705.png)
+![Alt Text](images/v1713419728.png)
+![Alt Text](images/v1713419764.png)
+![Alt Text](images/v1713419788.png)
+![Alt Text](images/v1713419814.png)
+![Alt Text](images/v1713419879.png)
+![Alt Text](images/v1713419904.png)
+![Alt Text](images/v1713419946.png)
+![Alt Text](images/v1713419985.png)
+![Alt Text](images/v1713420002.png)
+![Alt Text](images/v1713420132.png)
+![Alt Text](images/v1713421597.png)
+![Alt Text](images/v1713421624.png)
 
 
--rw-rw-r-- 1 pi pi 151426 Apr 18 13:41 v1713418441.png
--rw-rw-r-- 1 pi pi 109680 Apr 18 13:41 v1713418469.png
--rw-rw-r-- 1 pi pi 162607 Apr 18 13:41 v1713418599.png
--rw-rw-r-- 1 pi pi 146896 Apr 18 13:41 v1713419594.png
--rw-rw-r-- 1 pi pi 337093 Apr 18 13:41 v1713419622.png
--rw-rw-r-- 1 pi pi 107995 Apr 18 13:41 v1713419666.png
--rw-rw-r-- 1 pi pi 324595 Apr 18 13:41 v1713419705.png
--rw-rw-r-- 1 pi pi 153296 Apr 18 13:41 v1713419728.png
--rw-rw-r-- 1 pi pi  96104 Apr 18 13:41 v1713419764.png
--rw-rw-r-- 1 pi pi 179833 Apr 18 13:41 v1713419788.png
--rw-rw-r-- 1 pi pi 169988 Apr 18 13:41 v1713419814.png
--rw-rw-r-- 1 pi pi 398841 Apr 18 13:41 v1713419879.png
--rw-rw-r-- 1 pi pi 474332 Apr 18 13:41 v1713419904.png
--rw-rw-r-- 1 pi pi 160257 Apr 18 13:41 v1713419946.png
--rw-rw-r-- 1 pi pi 541948 Apr 18 13:41 v1713419985.png
--rw-rw-r-- 1 pi pi 615956 Apr 18 13:41 v1713420002.png
--rw-rw-r-- 1 pi pi 203316 Apr 18 13:41 v1713420132.png
--rw-rw-r-- 1 pi pi 224415 Apr 18 13:41 v1713421597.png
--rw-rw-r-- 1 pi pi 326431 Apr 18 13:41 v1713421624.png
+
+
 
 
 
