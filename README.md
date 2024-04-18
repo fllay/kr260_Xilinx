@@ -361,11 +361,34 @@ Before we build the project, we need to specify the maximum number of tasks so t
 ![Alt Text](images/v1713421597.png)
 
 
-We can now build the project. Please choose target to `Hardware`
+We can now build the project. Please choose  `Active Build Configuration`  to `Hardware`
 ![Alt Text](images/v1713419985.png)
 ![Alt Text](images/v1713420002.png)
 ![Alt Text](images/v1713420132.png)
 
+The output in this step will be a bitstream file and a cross compiled application file. These two files are in the following directories
+```python
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ ls -l ./new_applications/add_vec_system_hw_link/Hardware/
+total 8472
+-rw-rw-r-- 1 pi pi   27654 Apr 18 13:35 add_vec_system_hw_link_Hardware.build.ui.log
+drwxrwxr-x 5 pi pi    4096 Apr 18 13:34 binary_container_1.build
+-rw-rw-r-- 1 pi pi     354 Apr 18 13:28 binary_container_1-link.cfg
+-rw-rw-r-- 1 pi pi   31140 Apr 18 13:34 binary_container_1.mdb
+-rw-rw-r-- 1 pi pi 7828010 Apr 18 13:34 *binary_container_1.xclbin
+-rw-rw-r-- 1 pi pi    5672 Apr 18 13:34 binary_container_1.xclbin.info
+-rw-rw-r-- 1 pi pi   52724 Apr 18 13:34 binary_container_1.xclbin.link_summary
+-rw-rw-r-- 1 pi pi     177 Apr 18 13:28 binary_container_1.xclbin.sh
+-rw-rw-r-- 1 pi pi  337496 Apr 18 13:35 guidance.html
+-rw-rw-r-- 1 pi pi  337496 Apr 18 13:28 guidance.html.bak
+-rw-rw-r-- 1 pi pi     839 Apr 18 13:35 guidance.json
+-rw-rw-r-- 1 pi pi     303 Apr 18 13:35 guidance.pb
+-rw-rw-r-- 1 pi pi     303 Apr 18 13:28 guidance.pb.bak
+-rw-rw-r-- 1 pi pi    1598 Apr 18 13:28 makefile
+-rw-rw-r-- 1 pi pi    7920 Apr 18 13:34 xcd.log
+```
+
+```
+```
 
 
 
