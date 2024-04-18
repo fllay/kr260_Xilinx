@@ -352,10 +352,10 @@ Specify project name
 Add kernel image to the project. For sysroot and Root FS, they will automatically add to the project if the platform is configured correctly.
 ![Alt Text](images/v1713419788.png)
 ![Alt Text](images/v1713419764.png)
-
-
+Choose the `Simple addition` example project
 ![Alt Text](images/v1713419814.png)
 ![Alt Text](images/v1713419879.png)
+
 ![Alt Text](images/v1713419904.png)
 ![Alt Text](images/v1713419946.png)
 ![Alt Text](images/v1713419985.png)
