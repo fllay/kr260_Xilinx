@@ -342,6 +342,7 @@ Then open Vitis
 ![Alt Text](images/v1713418441.png)
 ![Alt Text](images/v1713418469.png)
 ![Alt Text](images/v1713418599.png)
+4.2 Add our new platform to Vitis
 ![Alt Text](images/v1713419594.png)
 ![Alt Text](images/v1713419622.png)
 ![Alt Text](images/v1713419666.png)
