@@ -333,6 +333,14 @@ pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/linux_files$ ls -l ./d
 ## Step 3 : Create Vitis platform
 Follow step to create Vitis Platform and Applicaiton. 
 ## Step 4 : Create Vitis Application
+We start with creating the application directory
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ cd new_applications/
+```
+Then open Vitis
+
+
+## Step 5 : Test accererated application on KR260
 
 When application is finished building process, follow the steps to prepare files to transfer to sd-card
 
