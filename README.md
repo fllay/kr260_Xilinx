@@ -352,3 +352,102 @@ Then create a file `shell.json` using `pico shell.json` with the following data
 }
 ```
 
+
+To test on the KR260, we first boot the KR260 with the SD-CARD  then trasfer files from  `~/wsxilinx/kria_vitis_platform/2023.1/vec_add_transfer` to the KR260
+
+
+```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/vec_add_transfer$ scp pl.dtbo binary_container_1.xclbin  shell.json  vec_add petalinux@192.168.68.127:/home/petalinux
+petalinux@192.168.68.127's password: 
+pl.dtbo                                                               100% 3181   228.4KB/s   00:00    
+binary_container_1.xclbin                                             100% 7645KB  11.0MB/s   00:00    
+shell.json                                                            100%   52     4.3KB/s   00:00    
+vec_add                                                               100%  641KB   9.9MB/s   00:00
+```
+
+ssh to the KR260
+```
+pi@piXlinx:~/Downloads$ ssh petalinux@192.168.68.127
+petalinux@192.168.68.127's password: 
+```
+On the KR260 terminal, check for transfered files
+
+```
+xilinx-kr260-starterkit-20231:~$ ls -l
+total 8300
+-rw-r--r-- 1 petalinux petalinux 7828197 Apr 17 19:59 binary_container_1.xclbin
+-rw-r--r-- 1 petalinux petalinux    3181 Apr 17 19:59 pl.dtbo
+-rw-r--r-- 1 petalinux petalinux      52 Apr 17 19:59 shell.json
+-rwxr-xr-x 1 petalinux petalinux  656728 Apr 17 19:59 vec_add
+```
+
+Then, make a application directory
+```
+xilinx-kr260-starterkit-20231:~$ sudo mkdir /lib/firmware/xilinx/vec_add
+```
+Change bitstream extension to `.bin` otherwise it will not be loaded
+```
+xilinx-kr260-starterkit-20231:~$ mv binary_container_1.xclbin binary_container_1.bin 
+```
+move files to the application directory 
+```
+xilinx-kr260-starterkit-20231:~$ sudo cp pl.dtbo binary_container_1.bin shell.json /lib/firmware/xilinx/vec_add/
+```
+Check for running applications
+```
+xilinx-kr260-starterkit-20231:~$ sudo xmutil listapps
+                     Accelerator          Accel_type                            Base           Base_type      #slots(PL+AIE)         Active_slot
+
+                k26-starter-kits            XRT_FLAT                k26-starter-kits            XRT_FLAT               (0+0)                  0,
+                         vec_add            XRT_FLAT                         vec_add            XRT_FLAT               (0+0)                  -1
+```
+Unload all running applications and load our application
+```
+xilinx-kr260-starterkit-20231:~$ sudo xmutil unloadapp
+remove from slot 0 returns: 0 (Ok)
+xilinx-kr260-starterkit-20231:~$ sudo xmutil loadapp vec_add
+vec_add: loaded to slot 0
+```
+Check our app whether it is loaded into the active slot
+```
+xilinx-kr260-starterkit-20231:~$ sudo xmutil listapps
+Password: 
+                     Accelerator          Accel_type                            Base           Base_type      #slots(PL+AIE)         Active_slot
+
+                k26-starter-kits            XRT_FLAT                k26-starter-kits            XRT_FLAT               (0+0)                  -1
+                         vec_add            XRT_FLAT                         vec_add            XRT_FLAT               (0+0)                  0,
+```
+Go back to hone directory `cd` then test the application
+```
+xilinx-kr260-starterkit-20231:~$ ./vec_add binary_container_1.bin
+INFO: Reading binary_container_1.bin
+Loading: 'binary_container_1.bin'
+Trying to program device[0]: edge
+Device[0]: program successful!
+TEST PASSED
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
