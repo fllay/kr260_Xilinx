@@ -356,13 +356,17 @@ Choose the `Simple addition` example project
 ![Alt Text](images/v1713419814.png)
 ![Alt Text](images/v1713419879.png)
 
+Before we build the project, we need to specify the maximum number of tasks so that we will not run out of memory during building process
+![Alt Text](images/v1713421624.png)
+![Alt Text](images/v1713421597.png)
+
+
 ![Alt Text](images/v1713419904.png)
 ![Alt Text](images/v1713419946.png)
 ![Alt Text](images/v1713419985.png)
 ![Alt Text](images/v1713420002.png)
 ![Alt Text](images/v1713420132.png)
-![Alt Text](images/v1713421597.png)
-![Alt Text](images/v1713421624.png)
+
 
 
 
