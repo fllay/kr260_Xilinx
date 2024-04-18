@@ -209,6 +209,9 @@ lrwxrwxrwx 1 pi pi         31 Apr 17 21:07 system.dtb -> system-zynqmp-sck-kr-g-
 -rw-r--r-- 1 pi pi      86516 Apr 17 21:05 zynqmp-qemu-multiarch-arm.dtb
 -rw-r--r-- 1 pi pi      13283 Apr 17 21:05 zynqmp-qemu-multiarch-pmu.dtb
 ```
+Once we got the `wic` file, we can write the image to SD-CARD
+
+
 
 Create a sysroot
 
