@@ -102,9 +102,9 @@ Filesystem Packages --> libs --> opencl-headers --> [*] opencl-headers
 Filesystem Packages --> libs --> opencl-clhpp --> [*] opencl-clhpp-dev
 Petaliunx Package Groups --> packagegroup-petalinux --> [*] packagegroup-petalinux
 Petaliunx Package Groups --> packagegroup-petalinux-gstreamer --> [*] packagegroup-petalinux-gstreamer
-Petaliunx Package Groups --> packagegroup-petalinux-opencv --> [*] packagegroup-petalinux-gstreamer
-Petaliunx Package Groups --> packagegroup-petalinux-v4lutils --> [*] packagegroup-petalinux-gstreamer
-Petaliunx Package Groups --> packagegroup-petalinux-x11 --> [*] packagegroup-petalinux-gstreamer
+Petaliunx Package Groups --> packagegroup-petalinux-opencv --> [*] packagegroup-petalinux-opencv
+Petaliunx Package Groups --> packagegroup-petalinux-v4lutils --> [*] packagegroup-petalinux-v4lutils
+Petaliunx Package Groups --> packagegroup-petalinux-x11 --> [*] packagegroup-petalinux-x11
 ```
 ### Clean and build petalinux
 
