@@ -1,8 +1,6 @@
-# kr260_Xilinx
+# Create accellerated computing
 
-#Create accellerated computing
-
-Step 1 : Create hardware platform
+## Step 1 : Create hardware platform
 
 1.1 Getting Started with the Kria KR260 (Custom HW)
 https://www.hackster.io/whitney-knitter/getting-started-with-the-kria-kr260-in-vivado-2022-1-33746d
@@ -13,7 +11,7 @@ Output :
 
 xsa platform file
 
-Step 2 : Create Petalinux image
+## Step 2 : Create Petalinux image
 
 
 https://www.hackster.io/whitney-knitter/getting-started-with-the-kria-kr260-in-petalinux-2022-1-daec16
@@ -332,8 +330,11 @@ pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/linux_files$ ls -l ./d
 ```
 
 
+## Step 3 : Create Vitis platform
+Follow step to create Vitis Platform and Applicaiton. 
+## Step 4 : Create Vitis Application
 
-Follow step to create Vitis Platform and Applicaiton. When application is finished building process, follow the steps to prepare files to transfer to sd-card
+When application is finished building process, follow the steps to prepare files to transfer to sd-card
 
 ```
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ mkdir -p vec_add_transfer
