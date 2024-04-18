@@ -13,6 +13,33 @@ xsa platform file
 
 ## Step 2 : Create Petalinux image
 
+The output from this step will be used in subsequence step. 
+These three files will be used in Vitis platform and Vitis apllication
+
+1. Petalinux Kernel
+   ```
+   Image
+   ```
+3. Root file system
+   ```
+   ext4
+   ```
+5. Sysroot
+   ```
+   sysroot directory
+   ```
+
+The SD-Card image to burn a SD-Card
+
+wic file
+```
+petalinux-sdimage.wic
+```
+
+Device tree overlay to use in the accelerared application
+```
+/dtg_output/dtg_output/kria_kr260/psu_cortexa53_0/device_tree_domain/bsp/pl.dtbo
+```
 
 https://www.hackster.io/whitney-knitter/getting-started-with-the-kria-kr260-in-petalinux-2022-1-daec16
 
