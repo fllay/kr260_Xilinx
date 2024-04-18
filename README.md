@@ -338,13 +338,15 @@ We start with creating the application directory
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ cd new_applications/
 ```
 Then open Vitis
-
+4.1 Create a new application project using the `new_applications` directory
 ![Alt Text](images/v1713418441.png)
 ![Alt Text](images/v1713418469.png)
 ![Alt Text](images/v1713418599.png)
 ![Alt Text](images/v1713419594.png)
 ![Alt Text](images/v1713419622.png)
 ![Alt Text](images/v1713419666.png)
+
+Specify project name
 ![Alt Text](images/v1713419705.png)
 ![Alt Text](images/v1713419728.png)
 ![Alt Text](images/v1713419764.png)
