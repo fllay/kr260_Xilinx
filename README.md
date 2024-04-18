@@ -346,12 +346,14 @@ Then open Vitis
 ![Alt Text](images/v1713419594.png)
 ![Alt Text](images/v1713419622.png)
 ![Alt Text](images/v1713419666.png)
-
-Specify project name
 ![Alt Text](images/v1713419705.png)
+Specify project name
 ![Alt Text](images/v1713419728.png)
-![Alt Text](images/v1713419764.png)
+Add kernel image to the project. For sysroot and Root FS, they will automatically add to the project if the platform is configured correctly.
 ![Alt Text](images/v1713419788.png)
+![Alt Text](images/v1713419764.png)
+
+
 ![Alt Text](images/v1713419814.png)
 ![Alt Text](images/v1713419879.png)
 ![Alt Text](images/v1713419904.png)
