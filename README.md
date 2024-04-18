@@ -106,6 +106,7 @@ Petaliunx Package Groups --> packagegroup-petalinux-opencv --> [*] packagegroup-
 Petaliunx Package Groups --> packagegroup-petalinux-v4lutils --> [*] packagegroup-petalinux-gstreamer
 Petaliunx Package Groups --> packagegroup-petalinux-x11 --> [*] packagegroup-petalinux-gstreamer
 ```
+### Clean and build petalinux
 
 ```
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$ petalinux-build -x mrproper
@@ -150,6 +151,8 @@ INFO: copy to TFTP-boot directory is not enabled !!
 [INFO] Successfully built project
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$
 ```
+### Create a SDK
+
 ```
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$ petalinux-build --sdk
 [INFO] Sourcing buildtools
@@ -296,7 +299,7 @@ Once we got the `wic` file, we can write the image to SD-CARD
 
 
 
-Create a sysroot
+### Create a sysroot
 
 ```
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1$ cd images/linux/
