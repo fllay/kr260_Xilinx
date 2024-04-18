@@ -332,7 +332,7 @@ pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/linux_files$ ls -l ./d
 
 ## Step 3 : Create Vitis platform
 Follow step to create Vitis Platform and Applicaiton. 
-## Step 4 : Create Vitis Application
+## Step 4 : Create Vitis Application (Output files in this step are a bitstream file `binary_container_1.xclbin`  and a cross compiled excuable file `vec_add`)
 We start with creating the application directory
 ```
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ cd new_applications/
@@ -367,14 +367,14 @@ We can now build the project. Please choose  `Active Build Configuration`  to `H
 ![Alt Text](images/v1713420132.png)
 
 The output in this step will be a bitstream file and a cross compiled application file. These two files are in the following directories
-```python
+```
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ ls -l ./new_applications/add_vec_system_hw_link/Hardware/
 total 8472
 -rw-rw-r-- 1 pi pi   27654 Apr 18 13:35 add_vec_system_hw_link_Hardware.build.ui.log
 drwxrwxr-x 5 pi pi    4096 Apr 18 13:34 binary_container_1.build
 -rw-rw-r-- 1 pi pi     354 Apr 18 13:28 binary_container_1-link.cfg
 -rw-rw-r-- 1 pi pi   31140 Apr 18 13:34 binary_container_1.mdb
--rw-rw-r-- 1 pi pi 7828010 Apr 18 13:34 *binary_container_1.xclbin
+-rw-rw-r-- 1 pi pi 7828010 Apr 18 13:34 binary_container_1.xclbin
 -rw-rw-r-- 1 pi pi    5672 Apr 18 13:34 binary_container_1.xclbin.info
 -rw-rw-r-- 1 pi pi   52724 Apr 18 13:34 binary_container_1.xclbin.link_summary
 -rw-rw-r-- 1 pi pi     177 Apr 18 13:28 binary_container_1.xclbin.sh
@@ -386,8 +386,19 @@ drwxrwxr-x 5 pi pi    4096 Apr 18 13:34 binary_container_1.build
 -rw-rw-r-- 1 pi pi    1598 Apr 18 13:28 makefile
 -rw-rw-r-- 1 pi pi    7920 Apr 18 13:34 xcd.log
 ```
-
+and 
 ```
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1$ ls -l ./new_applications/add_vec/Hardware/
+total 1296
+-rwxrwxr-x 1 pi pi 656736 Apr 18 13:27 add_vec
+-rw-rw-r-- 1 pi pi   2152 Apr 18 13:27 add_vec_Hardware.build.ui.log
+-rw-rw-r-- 1 pi pi 337496 Apr 18 13:27 guidance.html
+-rw-rw-r-- 1 pi pi 337496 Apr 18 13:27 guidance.html.bak
+-rw-rw-r-- 1 pi pi    809 Apr 18 13:27 guidance.json
+-rw-rw-r-- 1 pi pi    273 Apr 18 13:27 guidance.pb
+-rw-rw-r-- 1 pi pi    273 Apr 18 13:27 guidance.pb.bak
+-rw-rw-r-- 1 pi pi   1527 Apr 18 13:27 makefile
+drwxrwxr-x 2 pi pi   4096 Apr 18 13:27 src
 ```
 
 
