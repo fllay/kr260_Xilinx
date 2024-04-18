@@ -361,8 +361,7 @@ Before we build the project, we need to specify the maximum number of tasks so t
 ![Alt Text](images/v1713421597.png)
 
 
-![Alt Text](images/v1713419904.png)
-![Alt Text](images/v1713419946.png)
+We can now build the project. Please choose target to `Hardware`
 ![Alt Text](images/v1713419985.png)
 ![Alt Text](images/v1713420002.png)
 ![Alt Text](images/v1713420132.png)
