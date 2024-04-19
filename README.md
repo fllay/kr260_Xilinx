@@ -426,18 +426,35 @@ Follow step to create Vitis Platform and Applicaiton.
 /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/sd_dir
 /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/sysroots/cortexa72-cortexa53-xilinx-linux
 
-
+Open Vitis and choose platform directory
 ![Alt Text](images/v1713508682.png)
+Choose `Create platform project`
 ![Alt Text](images/v1713508710.png)
+Specify the platform name `kr260_opencv`
 ![Alt Text](images/v1713508793.png)
+Choose `Hardware Specification(XSA file)` 
 
 ![Alt Text](images/v1713508814.png)
 ![Alt Text](images/v1713508854.png)
+Choose linux as the Operating system and check `Generate boot components`
 ![Alt Text](images/v1713508887.png)
-
+We can now configure the platform to our Petalinux build. There are five fields to be configured.
+1. BIF file
+2. Boot Components Directory
+3. Linux Rootfs
+4. FAT32 Partition Directory
+5. Sysroot Directory
 ![Alt Text](images/v1713508927.png)
 ![Alt Text](images/v1713508948.png)
+Choose `Generate BIF` for the first field and configure each field using the following value
+```
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/boot
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/image/rootfs.ext4
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/sd_dir
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/sysroots/cortexa72-cortexa53-xilinx-linux
+```
 ![Alt Text](images/v1713509571.png)
+We can now build the platform
 ![Alt Text](images/v1713509671.png)
 
 
