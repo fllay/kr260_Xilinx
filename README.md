@@ -445,8 +445,9 @@ We can now configure the platform to our Petalinux build. There are five fields 
 4. FAT32 Partition Directory
 5. Sysroot Directory
 ![Alt Text](images/v1713508927.png)
+Choose `Generate BIF` for the first field
 ![Alt Text](images/v1713508948.png)
-Choose `Generate BIF` for the first field and configure each field using the following value
+Configure each field using the following value
 ```
 /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/boot
 /home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/image/rootfs.ext4
