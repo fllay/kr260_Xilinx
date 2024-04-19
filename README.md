@@ -340,12 +340,12 @@ pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterki
 
 ```
 
-copy `boot.scr, Imaage system.dtb` to  `../../../linux_files/sd_dir`
+copy `boot.scr, Imaage, system.dtb` to  `../../../linux_files/sd_dir`
 
 ```
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ cp rootfs.ext4 ../../../linux_files/image/
 pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ cp Image ../../../linux_files/image/
-pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ cp boot.scr system.dtb ../../../linux_files/sd_dir/
+pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/xilinx-kr260-starterkit-2023.1/images/linux$ cp boot.scr Image system.dtb ../../../linux_files/sd_dir/
 ```
 
 
@@ -420,6 +420,32 @@ pi@piXlinx:~/wsxilinx/kria_vitis_platform/2023.1/software/linux_files$ ls -l ./d
 
 ## Step 3 : Create Vitis platform
 Follow step to create Vitis Platform and Applicaiton. 
+
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/boot
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/image/rootfs.ext4
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/sd_dir
+/home/pi/wsxilinx/kria_vitis_platform/2023.1/software/linux_files/sysroots/cortexa72-cortexa53-xilinx-linux
+
+
+![Alt Text](images/v1713508682.png)
+![Alt Text](images/v1713508710.png)
+![Alt Text](images/v1713508793.png)
+
+![Alt Text](images/v1713508814.png)
+![Alt Text](images/v1713508854.png)
+![Alt Text](images/v1713508887.png)
+
+![Alt Text](images/v1713508927.png)
+![Alt Text](images/v1713508948.png)
+![Alt Text](images/v1713509571.png)
+![Alt Text](images/v1713509671.png)
+
+
+
+
+
+
+
 ## Step 4 : Create Vitis Application (Output files in this step are a bitstream file `binary_container_1.xclbin`  and a cross compiled excuable file `vec_add`)
 We start with creating the application directory
 ```
