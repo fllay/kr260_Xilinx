@@ -58,8 +58,8 @@ Device tree overlay to use in the accelerared application
 https://www.hackster.io/whitney-knitter/getting-started-with-the-kria-kr260-in-petalinux-2022-1-daec16
 
 ```
-petalinux-create --type project -s xilinx-kv260-starterkit-v2022.1-05140151.bsp
-cd xilinx-kv260-starterkit-2022.1/
+petalinux-create --type project -s xilinx-kr260-starterkit-v2023.1-05080224.bsp 
+cd xilinx-kv260-starterkit-2023.1/
 petalinux-config --get-hw-description ../../hardware/kr260_platform_20231
 petalinux-config -c rootfs
 ```
