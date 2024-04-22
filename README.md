@@ -61,6 +61,14 @@ https://www.hackster.io/whitney-knitter/getting-started-with-the-kria-kr260-in-p
 petalinux-create --type project -s xilinx-kr260-starterkit-v2023.1-05080224.bsp 
 cd xilinx-kv260-starterkit-2023.1/
 petalinux-config --get-hw-description ../../hardware/kr260_platform_20231
+```
+Then config in the following
+```
+FPGA Manager --> FPGA Manager
+Image Packaging Configuration --> Copy filnal image to tftp root
+```
+Then config the root file system
+```
 petalinux-config -c rootfs
 ```
 
