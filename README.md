@@ -1,4 +1,18 @@
-# Create accellerated computing
+# Create accellerated computing KR260
+
+Directory structure
+```
+├── application
+├── hardware
+├── platform
+└── software
+    └── linux_files
+        ├── boot
+        ├── image
+        └── sd_dir
+```
+
+
 
 ## Step 1 : Create hardware platform
 
